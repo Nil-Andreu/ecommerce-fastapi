@@ -9,7 +9,8 @@ settings = get_settings()
 app = FastAPI(
     title=settings.APP_NAME,
     description=settings.APP_DESCRIPTION,
-    version=str(settings.APP_VERSION)
+    version=str(settings.APP_VERSION),
+    docs_url=settings.DOCS_URL
 )
 
 
