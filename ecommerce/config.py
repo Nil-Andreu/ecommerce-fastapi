@@ -18,6 +18,10 @@ class Settings(BaseSettings):
 
     DATABASE_URI: PostgresDsn = f'postgresq.://{DATABASE_USERNAME}:{DATABASE_PASSWORD}@{DATABASE_HOST}/{DATABASE_NAME}:{DATABASE_PORT}'
 
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
+
 
 def get_settings():
     return Settings()
