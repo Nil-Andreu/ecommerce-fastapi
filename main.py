@@ -1,7 +1,16 @@
 import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
+from config import get_settings
+
+settings = get_settings()
+
+
+app = FastAPI(
+    title=settings.APP_NAME,
+    description=settings.APP_DESCRIPTION,
+    version=str(settings.APP_VERSION)
+)
 
 
 @app.get('/')
